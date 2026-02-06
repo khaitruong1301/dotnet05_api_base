@@ -1,0 +1,15 @@
+/*LỆNH TẠO DATABASE (FILE CSDL)*/
+CREATE DATABASE StoreDB;
+/*Lệnh sử dụng db*/
+USE StoreDB;
+
+/*LỆNH TẠO TABLE */
+CREATE TABLE Products(
+    id int PRIMARY KEY IDENTITY(1,1), /*Primary key: khoá chính, identity (1,1) tự động tăng*/
+    productName NVARCHAR(255) NOT NULL, /* Nvachar(255): chuỗi 255 ký tự và Notnull Không được bỏ trống*/
+    price DECIMAL(10,2) NOT NULL, /*Số thập phân (10 số, 2 số sau dấu phẩy)*/
+    image NVARCHAR(255) NULL, /*NULL: được phép bỏ trống*/
+    stock INT NOT NULL DEFAULT 0 /*DEFAULT 0: giá trị mặc định là 0*/
+);
+
+

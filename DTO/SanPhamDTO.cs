@@ -1,16 +1,11 @@
-using System.ComponentModel.DataAnnotations;
-
-public class SanPham
+public class SanPhamDTO
 {
-    [Key]
-    public int Id { get; set; }
+    public int MaSanPham { get; set; }
     public string TenSanPham { get; set; } = "";
     public double GiaBan { get; set; }
     public string MoTa { get; set; } = "";
     public string HinhAnh { get; set; } = "";
-
     public int IdDanhMuc { get; set; }
+    public string TenDanhMuc { get; set; } = "";
 
-    public DanhMucSanPham danhMucSanPham { get; set; }
-    
 }

@@ -17,6 +17,7 @@ namespace dotnet05_api_base.Controllers
             new SanPham(){Id=1,TenSanPham="Iphone 14 Pro Max",GiaBan=2000,MoTa="Điện thoại Iphone 14 Pro Max 128",HinhAnh="https://dummyimage.com/600x400/000/fff?text=Iphone14ProMax"},
             new SanPham(){Id=2,TenSanPham="Samsung S23 Ultra",GiaBan=1800,MoTa="Điện thoại Samsung S23 Ultra 128",HinhAnh="https://dummyimage.com/600x400/000/fff?text=SamsungS23Ultra"}
         };
+        
         public SanPhamController()
         {
         }
@@ -67,6 +68,8 @@ namespace dotnet05_api_base.Controllers
             }
             return Ok (sp);
         }
+
+
         [HttpGet("timKiemSanPham")]
         public IActionResult timKiemSanPham([FromQuery] string ten="",[FromQuery] double gia=double.MaxValue)
         {
@@ -77,6 +80,7 @@ namespace dotnet05_api_base.Controllers
             }
             return Ok(kq);
         }
+        
 
         [HttpPut("capNhatSanPham/{id}")]
         public async Task<IActionResult> capNhatSanPham([FromRoute] int id, [FromBody] SanPham sanPhamEdit)
