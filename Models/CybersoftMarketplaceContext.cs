@@ -161,8 +161,9 @@ public partial class CybersoftMarketplaceContext : DbContext
         {
             entity.Property(e => e.Alias).HasMaxLength(200);
             entity.Property(e => e.Deleted).HasDefaultValue(false);
+            entity.Property(e => e.DisplayPrice).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.Image).HasMaxLength(500);
             entity.Property(e => e.Name).HasMaxLength(200);
-            entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
@@ -191,6 +192,7 @@ public partial class CybersoftMarketplaceContext : DbContext
         {
             entity.Property(e => e.Alias).HasMaxLength(200);
             entity.Property(e => e.Deleted).HasDefaultValue(false);
+            entity.Property(e => e.Image).HasMaxLength(500);
             entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
             entity.Property(e => e.VariantName).HasMaxLength(200);
 
@@ -225,6 +227,7 @@ public partial class CybersoftMarketplaceContext : DbContext
         {
             entity.Property(e => e.Alias).HasMaxLength(200);
             entity.Property(e => e.Deleted).HasDefaultValue(false);
+            entity.Property(e => e.Image).HasMaxLength(200);
             entity.Property(e => e.ShopName).HasMaxLength(200);
 
             entity.HasOne(d => d.Owner).WithMany(p => p.Shops)
@@ -235,14 +238,17 @@ public partial class CybersoftMarketplaceContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07548A84E6");
+
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-            entity.Property(e => e.Address).HasMaxLength(50);
+            entity.Property(e => e.Alias).HasMaxLength(200);
             entity.Property(e => e.Avatar).HasMaxLength(500);
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.Deleted).HasDefaultValue(false);
             entity.Property(e => e.Email).HasMaxLength(255);
+            entity.Property(e => e.FullName).HasMaxLength(255);
             entity.Property(e => e.PasswordHash).HasMaxLength(500);
             entity.Property(e => e.Phone).HasMaxLength(20);
             entity.Property(e => e.Username).HasMaxLength(100);

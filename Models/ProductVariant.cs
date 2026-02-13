@@ -21,6 +21,8 @@ public partial class ProductVariant
 
     public bool? Deleted { get; set; }
 
+    public string? Image { get; set; }
+
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();

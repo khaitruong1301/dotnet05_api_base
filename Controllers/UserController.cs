@@ -49,7 +49,7 @@ namespace dotnet05_api_base.Controllers
                 Phone = userDTO.Phone,
                 Avatar = userDTO.Avatar,
                 PasswordHash = "123",
-                Address = userDTO.Address,
+                // Address = userDTO.Address,
                 CreatedAt = DateTime.UtcNow,
                 Deleted = false
             };

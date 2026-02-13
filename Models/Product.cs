@@ -21,9 +21,9 @@ public partial class Product
 
     public bool? Deleted { get; set; }
 
-    public decimal? Price { get; set; }
+    public string? Image { get; set; }
 
-    public int? Stock { get; set; }
+    public decimal DisplayPrice { get; set; }
 
     public virtual Category Category { get; set; } = null!;
 

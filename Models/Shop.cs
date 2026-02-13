@@ -9,6 +9,8 @@ public partial class Shop
 
     public Guid OwnerId { get; set; }
 
+    public string? Image { get; set; }
+
     public string ShopName { get; set; } = null!;
 
     public string? Description { get; set; }

@@ -15,9 +15,9 @@ public partial class Category
 
     public bool? Deleted { get; set; }
 
-    public int? ShopId { get; set; }
+    public int ShopId { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
-    public virtual Shop? Shop { get; set; }
+    public virtual Shop Shop { get; set; } = null!;
 }
